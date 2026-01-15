@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rosvela <rosvela@student.42madrid.com      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/15 11:31:36 by rosvela           #+#    #+#             */
+/*   Updated: 2026/01/15 13:03:25 by rosvela          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 int	ft_atoi(const char *str)
 {
 	int	sign;
@@ -6,7 +18,7 @@ int	ft_atoi(const char *str)
 
 	sign = 1;
 	res = 0;
-	while (*str >= 9 && *str <= 13 || *str == ' ')
+	while ((*str >= 9 && *str <= 13) || *str == ' ')
 		str++;
 	if (*str == '-' || *str == '+')
 	{
@@ -22,4 +34,3 @@ int	ft_atoi(const char *str)
 	}
 	return (res * sign);
 }
-

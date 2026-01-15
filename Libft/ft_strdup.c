@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rosvela <rosvela@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/15 11:17:44 by rosvela           #+#    #+#             */
-/*   Updated: 2026/01/15 11:39:51 by rosvela          ###   ########.fr       */
+/*   Created: 2026/01/15 13:08:49 by rosvela           #+#    #+#             */
+/*   Updated: 2026/01/15 14:53:59 by rosvela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-void	*ft_memmove(void *dest, const void *str, size_t n)
+char	*ft_strdup(const char *src)
 {
-	size_t			i;
-	unsigned char	*d;
-	unsigned char	*s;
+	size_t	src_len;
+	char	*dup;
+	size_t	i;
 
-	d = (unsigned char *)dest;
-	s = (unsigned char *)str;
-	if (d > s)
+	src_len = ft_strlen(src);
+	dup = malloc ((char)(src_len + 1));
+	if (!dup)
+		return (NULL);
+	while (i < src_len)
 	{
-		i = n;
-		while (i > 0)
-		{
-			i--;
-			d[i] = s[i];
-		}
+		dup[i] = src[i];
+		i++;
 	}
-	else
-	{
-		i = 0;
-		while (i < n)
-		{
-			d[i] = s[i];
-			i++;
-		}
-	}
-	return (dest);
+	dup[i] = '\0';
+	return (dup);
 }
+/*
+int	main(void)
+{
+	char *src = "Adios";
+	printf("%s", src);
+	return 0;
+}*/
