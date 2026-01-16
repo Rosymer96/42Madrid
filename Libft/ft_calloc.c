@@ -1,4 +1,4 @@
-* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
@@ -10,25 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int				total;
-	unsigned char	*str;
+	size_t				total;
+	unsigned char		*str;
 
 	total = nmemb * size;
 	str = malloc (total);
 	if (!str)
 		return (NULL);
-	ft_bzero(str, nmemb);
+	ft_bzero(str, total);
 	return (str);
 }
-/*
-int main(void)
-{
-	char *num = (char *)ft_calloc(5, sizeof(char));
-	printf("%p", num);
-	num++;
-}*/

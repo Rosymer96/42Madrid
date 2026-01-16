@@ -17,8 +17,9 @@ char	*ft_strdup(const char *src)
 	char	*dup;
 	size_t	i;
 
+	i = 0;
 	src_len = ft_strlen(src);
-	dup = malloc ((char)(src_len + 1));
+	dup = malloc (sizeof(char)*(src_len + 1));
 	if (!dup)
 		return (NULL);
 	while (i < src_len)
@@ -29,10 +30,3 @@ char	*ft_strdup(const char *src)
 	dup[i] = '\0';
 	return (dup);
 }
-/*
-int	main(void)
-{
-	char *src = "Adios";
-	printf("%s", src);
-	return 0;
-}*/
