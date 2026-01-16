@@ -22,7 +22,7 @@ char	*ft_strrchr(const char *src, int c)
 		src++;
 	}
 	if (c == '\0')
-		return (src);
+		return ((char *)src);
 	while (src >= tmp)
 	{
 		if (*src == c)
