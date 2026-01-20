@@ -1,6 +1,36 @@
 #include "libft.h"
 #include <stdio.h>
-#include <stdlib.h>
+
+// Función para imprimir el resultado de ft_split
+void print_split(char **arr, const char *expected)
+{
+    size_t i = 0;
+    if (!arr)
+    {
+        printf("(null) | Esperado: %s\n", expected);
+        return;
+    }
+    while (arr[i])
+    {
+        printf("[%s] ", arr[i]);
+        i++;
+    }
+    printf("| Esperado: %s\n", expected);
+}
+
+// Función para liberar el array devuelto por ft_split
+void free_split(char **arr)
+{
+    size_t i = 0;
+    if (!arr)
+        return;
+    while (arr[i])
+    {
+        free(arr[i]);
+        i++;
+    }
+    free(arr);
+}
 
 int main(void)
 {
@@ -198,4 +228,72 @@ int main(void)
     res1 = ft_strtrim("***--Hola--***", "*-");
     printf("Test Set 3 chars:     [%s] | Esperado: [Hola]\n", res1);
     free(res1);
+
+    printf("--- INICIO DE TESTS.  FT_SPLIT---\n");
+
+    char **res_split;
+
+    // -------------------------
+    // Test 1: caso normal
+    // -------------------------
+    printf("Test 1: \"Hola mundo 42\"\n");
+    res_split = ft_split("Hola mundo 42", ' ');
+    print_split(res_split, "[Hola] [mundo] [42]");
+    free_split(res_split);
+
+    // -------------------------
+    // Test 2: múltiples delimitadores_split seguidos
+    // -------------------------
+    printf("\nTest 2: \"Hola,,mundo,,42\"\n");
+    res_split = ft_split("Hola,,mundo,,42", ',');
+    print_split(res_split, "[Hola] [mundo] [42]");
+    free_split(res_split);
+
+    // -------------------------
+    // Test 3: delimitadores_split al inicio y final
+    // -------------------------
+    printf("\nTest 3: \",,Hola,mundo,,\"\n");
+    res_split = ft_split(",,Hola,mundo,,", ',');
+    print_split(res_split, "[Hola] [mundo]");
+    free_split(res_split);
+
+    // -------------------------
+    // Test 4: string sin delimitador
+    // -------------------------
+    printf("\nTest 4: \"Hola\"\n");
+    res_split = ft_split("Hola", ',');
+    print_split(res_split, "[Hola]");
+    free_split(res_split);
+
+    // -------------------------
+    // Test 5: string vacío
+    // -------------------------
+    printf("\nTest 5: \"\"\n");
+    res_split = ft_split("", ' ');
+    print_split(res_split, "(ninguna palabra)");
+    free_split(res_split);
+
+    // -------------------------
+    // Test 6: solo delimitadores_split
+    // -------------------------
+    printf("\nTest 6: \"/////\"\n");
+    res_split = ft_split("/////", '/');
+    print_split(res_split, "(ninguna palabra)");
+    free_split(res_split);
+
+    // -------------------------
+    // Test 7: delimitador = '\\0'
+    // -------------------------
+    printf("\nTest 7: delimitador '\\0'\n");
+    res_split = ft_split("Hola", '\0');
+    print_split(res_split, "[Hola]");
+    free_split(res_split);
+
+    // -------------------------
+    // Test 8: números y letras
+    // -------------------------
+    printf("\nTest 8: \"12-34-56\"\n");
+    res_split = ft_split("12-34-56", '-');
+    print_split(res_split, "[12] [34] [56]");
+    free_split(res_split);
 }
