@@ -39,53 +39,57 @@ char ft_prueba(unsigned int i, char c)
     return(c);
 }
 
+void ft_prueba2(unsigned int i, char *c)
+{
+    (void)i;
+    *c = ft_toupper(*c);
+}
+
+
 int main(void)
 {
-    /*
     char    *s = "Hello, world!";
-    char    *res;
+    char    *rsp;
 
     printf("--- INICIO DE TESTS.  FT_SUBSTR ---\n");
 
     // Test 1: Caso normal
-    res = ft_substr(s, 0, 5);
-    printf("Test 1 (Hello):  [%s]\n", res);
-    free(res);
+    rsp = ft_substr(s, 0, 5);
+    printf("Test 1 (Hello):  [%s]\n", rsp);
+    free(rsp);
 
     // Test 2: Desde la mitad
-    res = ft_substr(s, 7, 5);
-    printf("Test 2 (world):  [%s]\n", res);
-    free(res);
+    rsp = ft_substr(s, 7, 5);
+    printf("Test 2 (world):  [%s]\n", rsp);
+    free(rsp);
 
     // Test 3: Cortar hasta el final (len muy grande)
-    res = ft_substr(s, 7, 50);
-    printf("Test 3 (world!): [%s]\n", res);
-    free(res);
+    rsp = ft_substr(s, 7, 50);
+    printf("Test 3 (world!): [%s]\n", rsp);
+    free(rsp);
 
     // Test 4: START FUERA DE RANGO (El que te fallaba)
-    // Se espera un string vacio reservado, nada mas.
-    res = ft_substr(s, 50, 5);
-    if (res == NULL)
+    // Se espera un string vacio rspervado, nada mas.
+    rsp = ft_substr(s, 50, 5);
+    if (rsp == NULL)
         printf("Test 4 (Error):  NULL (No debería ser NULL)\n");
     else
     {
-        printf("Test 4 (Vacio):  [%s]\n", res);
-        if (res[0] == '\0')
+        printf("Test 4 (Vacio):  [%s]\n", rsp);
+        if (rsp[0] == '\0')
             printf("      -> OK: El primer caracter es un nulo.\n");
         else
-            printf("      -> FAIL: Contiene basura: ASCII %d ('%c')\n", res[0], res[0]);
-        free(res);
+            printf("      -> FAIL: Contiene basura: ASCII %d ('%c')\n", rsp[0], rsp[0]);
+        free(rsp);
     }
 
     // Test 5: Len 0
-    res = ft_substr(s, 0, 0);
-    printf("Test 5 (Vacio):  [%s]\n", res);
-    free(res);
+    rsp = ft_substr(s, 0, 0);
+    printf("Test 5 (Vacio):  [%s]\n", rsp);
+    free(rsp);
     printf("Test strdup Vacio: [%s]\n", ft_strdup(""));
-    printf("--- FIN DE TESTS ---\n");
-    return (0);
-    */
-    printf("--- INICIO DE TESTS.  FT_SUBSTR ---\n");
+        
+    printf("--- INICIO DE TESTS.  FT_STRJOIN ---\n");
 
     char *s1;
     char *s2;
@@ -308,5 +312,11 @@ int main(void)
 
     char *s_mapi = "hola";
     printf("%s\n", ft_strmapi(s_mapi, ft_prueba));
+    
+    printf("--- INICIO DE TESTS.  FT_STRITERI\n");
+
+    char s_iteri[] = "hola";
+    ft_striteri(s_iteri, ft_prueba2);
+    printf("%s\n", s_iteri);
     return (0);
 }
