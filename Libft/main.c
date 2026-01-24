@@ -32,6 +32,13 @@ void free_split(char **arr)
     free(arr);
 }
 
+char ft_prueba(unsigned int i, char c)
+{
+    if (i % 2 == 0)
+        return (ft_toupper(c));
+    return(c);
+}
+
 int main(void)
 {
     /*
@@ -296,4 +303,10 @@ int main(void)
     res_split = ft_split("12-34-56", '-');
     print_split(res_split, "[12] [34] [56]");
     free_split(res_split);
+
+    printf("--- INICIO DE TESTS.  FT_STRMAPI\n");
+
+    char *s_mapi = "hola";
+    printf("%s\n", ft_strmapi(s_mapi, ft_prueba));
+    return (0);
 }
