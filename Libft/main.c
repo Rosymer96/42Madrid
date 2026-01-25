@@ -318,5 +318,65 @@ int main(void)
     char s_iteri[] = "hola";
     ft_striteri(s_iteri, ft_prueba2);
     printf("%s\n", s_iteri);
+
+    printf("--- INICIO DE TESTS.  FT_PUTCHAR_FD\n");
+    ft_putchar_fd('H', 1);
+    ft_putchar_fd('o', 1);
+    ft_putchar_fd('l', 1);
+    ft_putchar_fd('a', 1);
+    ft_putchar_fd('\n', 1);
+    ft_putchar_fd('\0', 1);
+    printf("Ahora escribiendo en stderr:\n");
+    ft_putchar_fd('E', 2);
+    ft_putchar_fd('R', 2);
+    ft_putchar_fd('R', 2);
+    ft_putchar_fd('\n', 2);
+
+    printf("--- INICIO DE TESTS.  FT_PUTSTR_FD\n");
+
+    printf("Prueba ft_putstr_fd en stdout:\n");
+    ft_putstr_fd("Hola desde libft\n", 1);
+
+    printf("Prueba ft_putstr_fd en stderr:\n");
+    ft_putstr_fd("Mensaje de error\n", 2);
+
+    printf("Prueba con string vacía:\n");
+    ft_putstr_fd("", 1);
+    ft_putstr_fd("\n", 1);
+
+    printf("Prueba con NULL (no debe hacer nada):\n");
+    ft_putstr_fd(NULL, 1);
+    printf("He terminado de probar NULL\n");
+
+    printf("--- INICIO DE TESTS.  FT_PUTENDL_FD\n");
+
+    printf("Prueba ft_putendl_fd en stdout:\n");
+    ft_putendl_fd("Hola mundo", 1);
+
+    printf("Prueba ft_putendl_fd en stderr:\n");
+    ft_putendl_fd("Mensaje de error", 2);
+
+    printf("Prueba con string vacía:\n");
+    ft_putendl_fd("", 1);
+
+    printf("Prueba con NULL (no debe hacer nada):\n");
+    ft_putendl_fd(NULL, 1);
+    printf("He terminado de probar NULL\n");
+
+    printf("--- INICIO DE TESTS.  FT_PUTNBR_FD\n");
+    ft_putnbr_fd(42, 1);
+	write(1, "\n", 1);
+
+	ft_putnbr_fd(-42, 1);
+	write(1, "\n", 1);
+
+	ft_putnbr_fd(0, 1);
+	write(1, "\n", 1);
+
+	ft_putnbr_fd(-2147483648, 1);
+	write(1, "\n", 1);
+
+	ft_putnbr_fd(2147483647, 1);
+	write(1, "\n", 1);
     return (0);
 }
