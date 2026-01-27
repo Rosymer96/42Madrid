@@ -378,5 +378,47 @@ int main(void)
 
 	ft_putnbr_fd(2147483647, 1);
 	write(1, "\n", 1);
-    return (0);
+
+    printf("--- INICIO DE TESTS.  FT_LSTNEW \n");
+
+    t_list	*node;
+	char	*str = "Hola libft";
+
+	node = ft_lstnew(str);
+
+	if (!node)
+		return (1);
+
+	printf("content: %s\n", (char *)node->content);
+	printf("next: %p\n", (void *)node->next);
+    
+    printf("--- TEST FT_LSTADD_FRONT + FT_LSTNEW ---\n");
+    t_list *head = NULL;  // lista vacía al inicio
+    t_list *node1;
+    t_list *node2;
+
+
+    // Crear nodos
+    node1 = ft_lstnew("Primer nodo");
+    node2 = ft_lstnew("Segundo nodo");
+
+    // Agregar nodos al frente
+    ft_lstadd_front(&head, node1);  // Lista: Primer nodo
+    ft_lstadd_front(&head, node2);  // Lista: Segundo nodo -> Primer nodo
+
+    // Recorrer la lista e imprimir
+    t_list *tmp = head;
+    int i = 1;
+    while (tmp)
+    {
+        printf("Nodo %d: %s\n", i, (char *)tmp->content);
+        tmp = tmp->next;
+        i++;
+    }
+
+    // Comprobar el next del último nodo
+    if (head->next->next == NULL)
+        printf("Último nodo apunta a NULL ✅\n");
+
+	return (0);
 }
