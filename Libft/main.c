@@ -68,7 +68,7 @@ int main(void)
     printf("Test 3 (world!): [%s]\n", rsp);
     free(rsp);
 
-    // Test 4: START FUERA DE RANGO (El que te fallaba)
+    // Test 4: START FUERA DE RANGO
     // Se espera un string vacio rspervado, nada mas.
     rsp = ft_substr(s, 50, 5);
     if (rsp == NULL)
@@ -87,6 +87,7 @@ int main(void)
     rsp = ft_substr(s, 0, 0);
     printf("Test 5 (Vacio):  [%s]\n", rsp);
     free(rsp);
+
     printf("Test strdup Vacio: [%s]\n", ft_strdup(""));
         
     printf("--- INICIO DE TESTS.  FT_STRJOIN ---\n");
@@ -307,6 +308,12 @@ int main(void)
     res_split = ft_split("12-34-56", '-');
     print_split(res_split, "[12] [34] [56]");
     free_split(res_split);
+
+    printf("--- INICIO DE TESTS.  FT_ITOA\n");
+    printf("%s\n", ft_itoa(-153));
+    printf("%s\n", ft_itoa(42));
+    printf("%s\n", ft_itoa(-2147483648));
+    printf("%s\n", ft_itoa(2147483647));
 
     printf("--- INICIO DE TESTS.  FT_STRMAPI\n");
 
