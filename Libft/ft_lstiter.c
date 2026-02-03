@@ -1,59 +1,62 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rosvela <rosvela@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/03 13:39:16 by rosvela           #+#    #+#             */
-/*   Updated: 2026/02/03 14:20:43 by rosvela          ###   ########.fr       */
+/*   Created: 2026/02/03 14:05:28 by rosvela           #+#    #+#             */
+/*   Updated: 2026/02/03 14:28:32 by rosvela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	t_list	*tmp;
-	if (!lst || !del)
-		return;	
-	while (*lst != NULL)
+
+	if (!lst || !f)
+		return;
+	tmp = lst;
+	while (tmp != NULL)
 	{
-		tmp = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = tmp;
+		f(tmp->content);
+		tmp = tmp->next;
 	}
 }
 /*
-void del(void *content)
+void f(void *content)
 {
-	free(content);
+	char *str;
+	int i;
+	str = (char *)content;
+	i = 0;
+	while (str[i])
+	{
+		str[i] = ft_toupper(str[i]);
+		i++;
+	}
 }
 
+#include <stdio.h>
 int main(void)
 {
 	t_list *n1;
 	t_list *n2;
 	t_list *n3;
-	t_list	*tmp;
+	t_list *tmp;
 
 	n1 = ft_lstnew(ft_strdup("Alessia"));
-	n2 = ft_lstnew(ft_strdup("Rosy"));
-	n3 = ft_lstnew(ft_strdup("Fernando"));
-	ft_lstadd_back(&n1, n2);
-	ft_lstadd_back(&n2, n3);
+	n2 = ft_lstnew(ft_strdup("Fernando"));
+	n3 = ft_lstnew(ft_strdup("Rosy"));
+	ft_lstadd_front(&n1, n2);
+	ft_lstadd_front(&n1, n3);
 	tmp = n1;
-	while (tmp != NULL)
+	ft_lstiter(n1, f);
+	while (tmp)
 	{
 		printf("%s\n", (char *)tmp->content);
 		tmp = tmp->next;
 	}
-	ft_lstclear(&n1, del);
-	while (n1 != NULL)
-	{
-		printf("%s\n", (char *)n1->content);
-        n1 = n1->next;
-	}
-	printf("Todo esta borrado.\n");
-	return (0); 
 }*/
