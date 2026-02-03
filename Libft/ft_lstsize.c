@@ -1,49 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rosvela <rosvela@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/03 11:09:49 by rosvela           #+#    #+#             */
-/*   Updated: 2026/02/03 11:29:25 by rosvela          ###   ########.fr       */
+/*   Created: 2026/02/03 11:37:57 by rosvela           #+#    #+#             */
+/*   Updated: 2026/02/03 12:02:43 by rosvela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+int	ft_lstsize(t_list *lst)
 {
-    if (!new)
-        return;
-    new->next = *lst;
-    *lst = new;
+	int		len;
+	
+	while (lst  != NULL)
+	{
+		len++;
+		lst = lst->next;
+	}
+	return (len);
 }
-/*
+
 #include <stdio.h>
 
 int main(void)
 {
-	t_list	*lst;
-	t_list	*n1;
-	t_list	*n2;
-	t_list	*n3;
-
+	t_list *lst  = NULL;
+	t_list *n1;
+	t_list *n2;	
+	t_list *n3;
+	t_list *n4;
+	
 	lst = NULL;
-
+	printf("%i\n", ft_lstsize(lst));
 	n1 = ft_lstnew("Alessia");
 	n2 = ft_lstnew("Fernando");
 	n3 = ft_lstnew("Rosy");
-
-
-	printf("Nodo antes de probar funcion\n");
+	n4 = ft_lstnew("Angelica");
 	lst = n1;
-	printf("%s\n", (char *)lst->content);
-	printf("Primer nodo añadido\n");
+	printf("Aqui llegue\n");
 	ft_lstadd_front(&lst, n2);
-	printf("%s\n", (char *)lst->content);
-	printf("Segundo nodo añadido\n");
 	ft_lstadd_front(&lst, n3);
-	printf("%s\n", (char *)lst->content);
+	ft_lstadd_front(&lst, n4);
+	printf("%i\n", ft_lstsize(lst));
 	return (0);
-}*/
+}

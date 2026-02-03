@@ -1,49 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rosvela <rosvela@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/03 11:09:49 by rosvela           #+#    #+#             */
-/*   Updated: 2026/02/03 11:29:25 by rosvela          ###   ########.fr       */
+/*   Created: 2026/02/03 12:00:09 by rosvela           #+#    #+#             */
+/*   Updated: 2026/02/03 12:20:23 by rosvela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+t_list	*ft_lstlast(t_list *lst)
 {
-    if (!new)
-        return;
-    new->next = *lst;
-    *lst = new;
+	if (!lst)
+		return (NULL);
+	while (lst->next != NULL)
+	{
+		lst = lst->next;
+	}
+	return (lst);
 }
 /*
 #include <stdio.h>
 
 int main(void)
 {
-	t_list	*lst;
-	t_list	*n1;
-	t_list	*n2;
-	t_list	*n3;
+	t_list *lst;
+	t_list *n1;
+	t_list *n2;
+	t_list *n3;
+	t_list *last_node;
+	printf("Aqui llegue\n");
 
 	lst = NULL;
-
 	n1 = ft_lstnew("Alessia");
 	n2 = ft_lstnew("Fernando");
 	n3 = ft_lstnew("Rosy");
-
-
-	printf("Nodo antes de probar funcion\n");
 	lst = n1;
-	printf("%s\n", (char *)lst->content);
-	printf("Primer nodo añadido\n");
 	ft_lstadd_front(&lst, n2);
-	printf("%s\n", (char *)lst->content);
-	printf("Segundo nodo añadido\n");
 	ft_lstadd_front(&lst, n3);
-	printf("%s\n", (char *)lst->content);
+	printf("Aqui llegue\n");
+	last_node = ft_lstlast(lst);
+	printf("%s\n", (char *)last_node->content);
 	return (0);
 }*/

@@ -6,7 +6,7 @@
 /*   By: rosvela <rosvela@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 11:50:11 by rosvela           #+#    #+#             */
-/*   Updated: 2026/01/15 14:53:01 by rosvela          ###   ########.fr       */
+/*   Updated: 2026/02/03 13:48:59 by rosvela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -59,5 +59,9 @@ void        ft_putendl_fd(char *s, int fd);
 void        ft_putnbr_fd(int n, int fd);
 t_list      *ft_lstnew(void *content);
 void        ft_lstadd_front(t_list **lst, t_list *new);
+int			ft_lstsize(t_list *lst);
+t_list		*ft_lstlast(t_list *lst);
+void		ft_lstadd_back(t_list **lst, t_list *new);
+void    ft_lstdelone(t_list *lst, void (*del)(void *));
 
 #endif
