@@ -6,7 +6,7 @@
 /*   By: rosvela <rosvela@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 11:37:57 by rosvela           #+#    #+#             */
-/*   Updated: 2026/02/03 15:38:14 by rosvela          ###   ########.fr       */
+/*   Updated: 2026/02/03 16:40:17 by rosvela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	ft_lstsize(t_list *lst)
 {
 	int		len;
 
+	len = 0;
 	while (lst != NULL)
 	{
 		len++;

@@ -9,6 +9,8 @@ OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
+bonus: $(NAME)
+
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
