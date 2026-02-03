@@ -6,7 +6,7 @@
 /*   By: rosvela <rosvela@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 12:16:21 by rosvela           #+#    #+#             */
-/*   Updated: 2026/01/15 15:07:51 by rosvela          ###   ########.fr       */
+/*   Updated: 2026/02/03 15:26:09 by rosvela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,7 +15,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	size_t	total;
 	void	*str;
-	
+
 	if (nmemb == 0 || size == 0)
 		return (malloc(0));
 	total = nmemb * size;

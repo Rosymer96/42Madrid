@@ -6,7 +6,7 @@
 /*   By: rosvela <rosvela@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 11:09:49 by rosvela           #+#    #+#             */
-/*   Updated: 2026/02/03 11:29:25 by rosvela          ###   ########.fr       */
+/*   Updated: 2026/02/03 15:33:36 by rosvela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-    if (!new)
-        return;
-    new->next = *lst;
-    *lst = new;
+	if (!new)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }
 /*
 #include <stdio.h>

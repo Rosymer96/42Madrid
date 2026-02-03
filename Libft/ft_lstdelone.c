@@ -6,7 +6,7 @@
 /*   By: rosvela <rosvela@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 12:55:06 by rosvela           #+#    #+#             */
-/*   Updated: 2026/02/03 13:38:14 by rosvela          ###   ########.fr       */
+/*   Updated: 2026/02/03 15:38:43 by rosvela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (!lst || !del)
-		return;
+		return ;
 	del(lst->content);
 	free(lst);
 }

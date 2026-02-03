@@ -6,7 +6,7 @@
 /*   By: rosvela <rosvela@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 13:39:16 by rosvela           #+#    #+#             */
-/*   Updated: 2026/02/03 14:20:43 by rosvela          ###   ########.fr       */
+/*   Updated: 2026/02/03 15:35:49 by rosvela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*tmp;
+
 	if (!lst || !del)
-		return;	
+		return ;
 	while (*lst != NULL)
 	{
 		tmp = (*lst)->next;

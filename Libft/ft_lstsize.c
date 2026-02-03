@@ -6,7 +6,7 @@
 /*   By: rosvela <rosvela@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 11:37:57 by rosvela           #+#    #+#             */
-/*   Updated: 2026/02/03 12:02:43 by rosvela          ###   ########.fr       */
+/*   Updated: 2026/02/03 15:38:14 by rosvela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 int	ft_lstsize(t_list *lst)
 {
 	int		len;
-	
-	while (lst  != NULL)
+
+	while (lst != NULL)
 	{
 		len++;
 		lst = lst->next;
 	}
 	return (len);
 }
-
+/*
 #include <stdio.h>
 
 int main(void)
@@ -47,4 +47,4 @@ int main(void)
 	ft_lstadd_front(&lst, n4);
 	printf("%i\n", ft_lstsize(lst));
 	return (0);
-}
+}*/

@@ -6,7 +6,7 @@
 /*   By: rosvela <rosvela@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 14:05:28 by rosvela           #+#    #+#             */
-/*   Updated: 2026/02/03 14:28:32 by rosvela          ###   ########.fr       */
+/*   Updated: 2026/02/03 15:36:18 by rosvela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	t_list	*tmp;
 
 	if (!lst || !f)
-		return;
+		return ;
 	tmp = lst;
 	while (tmp != NULL)
 	{
