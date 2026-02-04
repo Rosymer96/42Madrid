@@ -40,7 +40,7 @@ int main(void)
 	char src1[] = "Alessia Xiuling";
 	char dest1[20];
 	printf("ft_memcpy: [%s]\n", (char *)ft_memcpy(dest, src, 16));
-	printf("memcpy: [%s]\n", (char *)ft_memcpy(dest, src, 16));
+	printf("memcpy: [%s]\n", (char *)memcpy(dest, src, 16));
 
 	int nums[3] =  {100, 200, 300};
 	int dest_nums[3];

@@ -30,3 +30,32 @@ char	*ft_strdup(const char *src)
 	dup[i] = '\0';
 	return (dup);
 }
+/*
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main(void)
+{
+	char	*orig = "Hola Alessia Xiuling";
+	char	*ft_dup;
+	char	*dup;
+
+	printf("Orig:  [%s] en %p\n\n", orig, (void*)orig);
+
+	ft_dup = ft_strdup(orig);
+	dup = strdup(orig);
+
+	printf("(ft_dup): [%s] en %p\n", ft_dup, (void*)ft_dup);
+	printf("(dup):         [%s] en %p\n", dup, (void*)dup);
+
+	ft_dup[0] = 'Z';
+
+	printf("orig:   [%s]\n", orig);
+	printf("ft_dup: [%s](Z)\n", ft_dup);
+	printf("dup:    [%s]\n", dup);
+
+	free(ft_dup);
+	free(dup);
+
+	return (0);
+}*/

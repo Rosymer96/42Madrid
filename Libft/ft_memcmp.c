@@ -13,18 +13,37 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char	*us1;
-	unsigned char	*us2;
-	size_t			i;
+	const unsigned char	*src1;
+	const unsigned char	*src2;
+	size_t				i;
 
-	us1 = (unsigned char *)s1;
-	us2 = (unsigned char *)s2;
+	src1 = (const unsigned char *)s1;
+	src2 = (const unsigned char *)s2;
 	i = 0;
-	while (i < n && us1[i] == us2[i])
+	while (i < n)
 	{
+		if (src1[i] != src2[i])
+			return (src1[i] - src2[i]);
 		i++;
 	}
-	if (i == n)
-		return (0);
-	return (us1[i] - us2[i]);
+	return (0);
 }
+/*
+#include <stdio.h>
+#include <string.h>
+int main(void)
+{
+    char s1[] = "Hola\0Fernando";
+    char s2[] = "Hola\0Alessia";
+    
+    printf("ft_memcmp: %d\n", ft_memcmp(s1, s2, 10));
+    printf("memcmp: %d\n\n", memcmp(s1, s2, 10));
+
+    printf("ft_memcmp (n=4): %d\n", ft_memcmp("abcde", "abczz", 4)); 
+    printf("memcmp (n=4): %d\n\n", memcmp("abcde", "abczz", 4));
+
+    printf("ft_memcmp: %d\n", ft_memcmp("Hola", "Adios", 0));
+    printf("memcmp : %d\n", memcmp("Hola", "Adios", 0));
+
+    return (0);
+}*/

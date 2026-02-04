@@ -27,3 +27,45 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(str, total);
 	return (str);
 }
+/*
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main(void)
+{
+	size_t	count = 5;
+	size_t	size = sizeof(int);
+	int		*arr;
+	int		*arr1;
+	size_t	i;
+
+	arr = (int *)ft_calloc(count, size);
+	arr1 = (int *)calloc(count, size);
+
+	for (i = 0; i < count; i++)
+	{
+		printf("idx [%zu]: %d\n", i, arr[i]);
+	}
+	free(arr);
+	for (i = 0; i < count; i++)
+	{
+		printf("idx [%zu]: %d\n", i, arr1[i]);
+	}
+	free(arr1);
+	printf("\n");
+	void *p1 = ft_calloc(0, 10);
+	void *p2 = calloc(0, 10);
+	
+	printf("ft_calloc(0, 10): %p\n", p1);
+	printf("   calloc(0, 10): %p\n", p2);
+	
+	free(p1);
+	free(p2);
+	printf("\n");
+	void *p3 = ft_calloc(1024, (size_t)-1 / 2);
+	void *p4 = calloc(1024, (size_t)-1 / 2);
+	
+	printf("ft_calloc(1024, (size_t)-1 / 2): %p\n", p3);
+	printf("   calloc(1024, (size_t)-1 / 2): %p\n", p4);
+	return (0);
+}*/

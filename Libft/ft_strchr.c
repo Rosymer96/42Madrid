@@ -14,13 +14,46 @@
 
 char	*ft_strchr(const char *src, int c)
 {
-	while (*src)
+	size_t	i;
+	char	ch;
+
+	i = 0;
+	ch = (char)c;
+	while (src[i])
 	{
-		if (*src == (char)c)
-			return ((char *)src);
-		src++;
+		if (src[i] == ch)
+			return ((char *)&src[i]);
+		i++;
 	}
-	if (c == '\0')
-		return ((char *)src);
+	if (src[i] == ch)
+		return ((char *)&src[i]);
 	return (NULL);
 }
+/*
+#include <stdio.h>
+#include <string.h>
+int	main(void)
+{
+	const char	*str = "Alessia Xiuling";
+	char		*result;
+	char		*result_ori;
+
+	result = ft_strchr(str, 'i');
+	printf("ft_strchr:  [%s] (Dir: %p)\n", result, result);
+
+	result = ft_strchr(str, 'Z');
+	printf("ft_strchr:  [%s]\n", result);
+
+	result = ft_strchr(str, '\0');
+	printf("ft_strchr:  (Dir: %p)\n", result);
+
+	result = ft_strchr(str, 1024);
+	result_ori= strchr(str, 1024);
+
+	printf("ft_strchr:       %p\n", result);
+	printf("strchr:   %p\n", result_ori);
+
+	printf("NULL: [%s]\n", strchr(NULL, 'a'));
+
+	return (0);
+}*/
