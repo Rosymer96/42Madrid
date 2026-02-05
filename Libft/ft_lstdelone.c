@@ -54,7 +54,5 @@ int main(void)
     ft_lstdelone(n3, del);
 	printf("%s\n", (char *)n1->content);
 	printf("%s\n", (char *)n2->content);
-	printf("%s\n", (char *)n3->content);
-	printf("%s\n", (char *)n4->content);
 	return (0);
 }*/

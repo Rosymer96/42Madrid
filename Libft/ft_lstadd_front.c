@@ -35,14 +35,12 @@ int main(void)
 	n2 = ft_lstnew("Fernando");
 	n3 = ft_lstnew("Rosy");
 
-
-	printf("Nodo antes de probar funcion\n");
 	lst = n1;
 	printf("%s\n", (char *)lst->content);
-	printf("Primer nodo añadido\n");
+	printf("node added\n");
 	ft_lstadd_front(&lst, n2);
 	printf("%s\n", (char *)lst->content);
-	printf("Segundo nodo añadido\n");
+	printf("node added\n");
 	ft_lstadd_front(&lst, n3);
 	printf("%s\n", (char *)lst->content);
 	return (0);

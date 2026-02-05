@@ -29,7 +29,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!subs)
 		return (NULL);
 	i = 0;
-	while (i < len && s[start + i])
+	while (i < len)
 	{
 		subs[i] = s[start + i];
 		i++;
@@ -37,3 +37,28 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	subs[i] = '\0';
 	return (subs);
 }
+/*
+#include <stdio.h>
+#include "libft.h"
+
+int main(void)
+{
+    char *s = "Hola 42 Madrid";
+    char *sub;
+
+    sub = ft_substr(s, 5, 2);
+    printf("Test 1 (5, 2): [%s] (Expected: [42])\n", sub);
+    free(sub);
+
+    // Test 2: Start fuera de rango
+    sub = ft_substr(s, 50, 5);
+    printf("Test 2 (50, 5): [%s] (Expected: [])\n", sub);
+    free(sub);
+
+    // Test 3: Len más grande que la string
+    sub = ft_substr(s, 0, 100);
+    printf("Test 3 (0, 100): [%s] (Expected: [Hola 42 Madrid])\n", sub);
+    free(sub);
+
+    return (0);
+}*/

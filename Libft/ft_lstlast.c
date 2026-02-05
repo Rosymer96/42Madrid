@@ -41,7 +41,7 @@ int main(void)
 	lst = n1;
 	ft_lstadd_front(&lst, n2);
 	ft_lstadd_front(&lst, n3);
-	printf("Aqui llegue\n");
+	printf("I'm here!\n");
 	last_node = ft_lstlast(lst);
 	printf("%s\n", (char *)last_node->content);
 	return (0);

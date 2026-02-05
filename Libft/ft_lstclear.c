@@ -30,7 +30,7 @@ void del(void *content)
 {
 	free(content);
 }
-
+#include <stdio.h>
 int main(void)
 {
 	t_list *n1;
@@ -55,6 +55,7 @@ int main(void)
 		printf("%s\n", (char *)n1->content);
         n1 = n1->next;
 	}
-	printf("Todo esta borrado.\n");
+	printf("All clear.\n");
 	return (0); 
-}*/
+}
+*/

@@ -42,7 +42,7 @@ int main(void)
 	n3 = ft_lstnew("Rosy");
 	n4 = ft_lstnew("Angelica");
 	lst = n1;
-	printf("Aqui llegue\n");
+	printf("I am here\n");
 	ft_lstadd_front(&lst, n2);
 	ft_lstadd_front(&lst, n3);
 	ft_lstadd_front(&lst, n4);

@@ -309,11 +309,29 @@ int main(void)
     print_split(res_split, "[12] [34] [56]");
     free_split(res_split);
 
+    printf("\nTest 9: Una sola letra \"a\" con delimitador ' ' \n");
+    res_split = ft_split("a", ' ');
+    print_split(res_split, "[a]");
+    free_split(res_split);
+
+    printf("\nTest 10: \"lorem ipsum\" con delimitador 'z' \n");
+    res_split = ft_split("lorem ipsum", 'z');
+    print_split(res_split, "[lorem ipsum]");
+    free_split(res_split);
+
+    printf("\nTest 11: s es NULL\n");
+    res_split = ft_split(NULL, ' ');
+    if (res_split == NULL)
+    printf("Resultado: NULL (Correcto)\n\n");
+    else
+    printf("Resultado: KO (Debería ser NULL)\n");
+
     printf("--- INICIO DE TESTS.  FT_ITOA\n");
     printf("%s\n", ft_itoa(-153));
     printf("%s\n", ft_itoa(42));
     printf("%s\n", ft_itoa(-2147483648));
     printf("%s\n", ft_itoa(2147483647));
+    printf("%s\n", ft_itoa(0));
 
     printf("--- INICIO DE TESTS.  FT_STRMAPI\n");
 

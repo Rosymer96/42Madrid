@@ -29,6 +29,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		{
 			del(new_content);
 			ft_lstclear(&new_lst, del);
+			return (NULL);
 		}
 		ft_lstadd_back(&new_lst, new_node);
 		lst = lst->next;
@@ -38,16 +39,24 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 /*
 void *f(void *content)
 {
-    char *str;
-    int i;
-    str = (char *)content;
+    char    *str;
+    char    *new_str;
+    int     i;
+
+    if (!content)
+        return (NULL);
+
+    new_str = ft_strdup((char *)content);
+    if (!new_str)
+        return (NULL);
+
     i = 0;
-    while (str[i])
+    while (new_str[i])
     {
-        str[i] = ft_toupper(str[i]);
+        new_str[i] = ft_toupper(new_str[i]);
         i++;
     }
-	return (str);
+    return (new_str);
 }
 
 void del(void *content)
@@ -76,5 +85,8 @@ int main (void)
 		printf("%s\n", (char *)tmp->content);
 		tmp = tmp->next;
 	}
+		// Limpieza total
+    ft_lstclear(&n1, del);
+    ft_lstclear(&new_lst, del);
 	return (0);
 }*/
