@@ -1,5 +1,3 @@
-# LIBFT - Mi primera librería en C
-
 *Este proyecto ha sido creado como parte del currículo de 42 por rosvela.*
 
 ## Descripción
@@ -166,14 +164,7 @@ typedef struct s_list
 
 ### Documentación Oficial
 - [Manual de C (man pages)](https://man7.org/linux/man-pages/man3/)
-- [POSIX C Library Reference](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/string.h.html)
-
-### Artículos y Tutoriales
 - [The C Programming Language - Kernighan & Ritchie](https://en.wikipedia.org/wiki/The_C_Programming_Language)
-- [C Memory Management Guide](https://www.geeksforgeeks.org/dynamic-memory-allocation-in-c-using-malloc-calloc-free-and-realloc/)
-- [Linked Lists in C](https://www.geeksforgeeks.org/linked-list-set-1-introduction/)
-
-### Referencias de 42
 - [42 Network Intra](https://intra.42.fr/)
 - [42 School Curriculum](https://42.fr/)
 
